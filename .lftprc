@@ -1,0 +1,41 @@
+#  ______ _    _ 
+# |  ____| |  | |
+# | |__  | |__| | Author:		Foster Hangdaan
+# |  __| |  __  | Website:	www.fosterhangdaan.com
+# | |    | |  | | Github:		https://github.com/FosterHangdaan
+# |_|    |_|  |_|
+#
+# Personalized LFTP experience just for me.
+#
+# To source this file, place the line below to ~/.lftprc:
+# source /path/to/source
+
+# General Settings
+# -----------------------------------------------------------------------
+
+set prompt "\[\e[1;30m\][\[\e[0;34m\]f\[\e[1m\]t\[\e[37m\]p\[\e[30m\]] \[\e[34m\]\u\[\e[0;34m\]\@\[\e[1m\]\h\[\e[1;30m\]:\[\e[1;34m\]\w\[\e[1;30m\]>\[\e[0m\] "
+
+# Security
+# -----------------------------------------------------------------------
+# Take advantage of SSL by copying the CA certificate of the FTP server
+# then set the option below in the local lftp config at ~/.lftprc
+# set ssl:ca-file "path/to/ca-cert"
+set ssl:ca-file "~/.local/ssl/certs/vsftpd.pem"
+
+# if true, try to negotiate SSL connection with FTP server for non-anonymous access.  Default  is  true.
+# This and other SSL settings are only available if lftp was compiled with an ssl/tls library.
+set ftp:ssl-allow true
+
+# if true, refuse to send password in clear when server does not support SSL.  Default is false.
+set ftp:ssl-force true
+
+# the argument for AUTH command, can be one of SSL, TLS, TLS-P, TLS-C.  See RFC4217 for explanations. By
+# default TLS or SSL will be used, depending on FEAT reply.
+# set ftp:ssl-auth "TLS"
+
+# if  true,  request  SSL  connection  for  data  transfers. This is cpu-intensive but provides privacy.
+# Default is false.
+set ftp:ssl-protect-data true
+
+# Logging
+#set log:enabled true
