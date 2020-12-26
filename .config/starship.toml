@@ -37,7 +37,7 @@ style = "bold cyan"
 format = "[$path$read_only ]($style)"
 
 [username]
-style_user = "bg:#268bd2 fg:white bold"
+style_user = "bg:#268bd2 fg:white"
 style_root = "bg:#268bd2 fg:red bold"
 format = "[  $user]($style)"
 disabled = false
@@ -45,7 +45,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '[@$hostname ](bg:#268bd2 fg:white bold)'
+format = '[[@](bg:#268bd2 bold)$hostname ](bg:#268bd2 fg:white)'
 disabled = false
 
 [git_status]
