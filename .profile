@@ -13,7 +13,7 @@
 
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
-#umask 022
+umask 022
 
 # set custom path for Starship configuration file
 #if [ -r "/path/to/config" ] ; then
