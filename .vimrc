@@ -38,7 +38,7 @@ set autoindent
 set laststatus=2
 
 " Enable use of the mouse for all modes
-set mouse=a
+"set mouse=a
 
 " Display line numbers on the left
 set number
