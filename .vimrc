@@ -27,6 +27,15 @@ syntax on
 " Better command line completion
 set wildmenu
 
+" Allows you to re-use the same window and switch from an unsaved buffer
+" without saving it first. Also allows you to keep an undo history for
+" multiple files when re-using the same window in this way. Note that using
+" persistent undo also lets you undo in multiple files even in the same
+" window, but is less efficient and is actually designed for keeping undo
+" history after losing Vim entirely. Vim will complain if you try to quit
+" without saving, and swap files will keep you safe if your computer crashes.
+set hidden
+
 " Allow backspacing over autoindent, line breaks and start of insert action.
 set backspace=indent,eol,start
 
