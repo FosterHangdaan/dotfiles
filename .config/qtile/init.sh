@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xcompmgr -c &
+picom --experimental-backends &
 nitrogen --restore &
