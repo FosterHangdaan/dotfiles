@@ -40,7 +40,7 @@ function fish_greeting
 	if test $select -eq 0; and command -qs figlet; and command -qs lolcat
 		figlet 'Foster Hangdaan' | lolcat
 	else if test $select -eq 1; and command -qs cowsay; and command -qs fortune; and command -qs lolcat
-		fortune -s | cowsay -f (ls /usr/share/cowsay/cows/ | shuf -n 1) | lolcat
+		fortune -s | cowsay -f (ls /usr/share/cows | shuf -n 1) | lolcat
 	else if test $select -eq 2; and command -qs neofetch
 			neofetch
 	else
