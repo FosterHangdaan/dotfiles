@@ -15,6 +15,9 @@
 
 set prompt "\[\e[1;30m\][\[\e[0;34m\]f\[\e[1m\]t\[\e[37m\]p\[\e[30m\]] \[\e[34m\]\u\[\e[0;34m\]\@\[\e[1m\]\h\[\e[1;30m\]:\[\e[1;34m\]\w\[\e[1;30m\]>\[\e[0m\] "
 
+# Logging
+#set log:enabled true
+
 # Security
 # -----------------------------------------------------------------------
 # Take advantage of SSL by copying the CA certificate of the FTP server
@@ -37,5 +40,5 @@ set ftp:ssl-force true
 # Default is false.
 set ftp:ssl-protect-data true
 
-# Logging
-#set log:enabled true
+# Verify if server's certificate is signed by a known Certificate Authority.
+# ssl:verify-certificate true
