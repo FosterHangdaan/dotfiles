@@ -88,12 +88,31 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+bar_size = 24
 screens = [
-    Screen(
+    Screen( # Left monitor
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(disable_drag=True),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Chord(
+                    chords_colors={
+                        'launch': ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.Systray()
+            ],
+            size=bar_size,
+        ),
+    ),
+    Screen( # Center monitor
+        top=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.GroupBox(disable_drag=True),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -105,11 +124,30 @@ screens = [
                 widget.Systray(),
                 widget.Net(interface="enp8s0"), # Replace with the appropriate interface
                 widget.Clock(format='%A - %B %d - %r'),
-                widget.QuickExit()
+                widget.QuickExit(default_text='[ logout ]')
             ],
-            24,
+            size=bar_size,
         ),
     ),
+    Screen( # Right monitor
+        top=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.GroupBox(disable_drag=True),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Chord(
+                    chords_colors={
+                        'launch': ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.Systray()
+            ],
+            size=bar_size,
+        ),
+    ),
+
 ]
 
 # Drag floating layouts.
