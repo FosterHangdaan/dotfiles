@@ -2,3 +2,4 @@
 
 picom &
 nitrogen --restore &
+light-locker &
