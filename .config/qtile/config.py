@@ -50,7 +50,7 @@ keys = [
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
                 ('TERM',{'layout': 'monadtall'}),
-                ('SSH', {'layout': 'monadtall'}),
+                ('SSH', {'layout': 'tree'}),
                 ('VIRT',{'layout': 'monadtall'}),
                 ('KPXC',{'layout': 'monadtall'}),
                 ('MISC',{'layout': 'monadtall'}),
