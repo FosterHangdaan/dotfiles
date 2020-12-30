@@ -99,9 +99,7 @@ screens = [
     Screen( # Left monitor
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(disable_drag=True),
-                widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -109,7 +107,8 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray()
+                widget.Systray(),
+                widget.CurrentLayout(),
             ],
             size=bar_size,
         ),
@@ -117,7 +116,6 @@ screens = [
     Screen( # Center monitor
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(disable_drag=True),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -128,6 +126,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                widget.CurrentLayout(),
                 widget.Net(interface="enp8s0"), # Replace with the appropriate interface
                 widget.Clock(format='%A - %B %d - %r'),
                 widget.QuickExit(default_text='[ logout ]')
@@ -138,9 +137,7 @@ screens = [
     Screen( # Right monitor
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(disable_drag=True),
-                widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -148,7 +145,8 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray()
+                widget.Systray(),
+                widget.CurrentLayout(),
             ],
             size=bar_size,
         ),
