@@ -48,8 +48,15 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 ]
 
-my_groups = [ 'WEB', 'TERM', 'SSH', 'VIRT', 'KPXC', 'MISC' ]
-groups = [ Group(i) for i in my_groups ]
+my_groups = [   ('WEB', {'layout': 'monadtall'}),
+                ('TERM',{'layout': 'monadtall'}),
+                ('SSH', {'layout': 'monadtall'}),
+                ('VIRT',{'layout': 'monadtall'}),
+                ('KPXC',{'layout': 'monadtall'}),
+                ('MISC',{'layout': 'monadtall'}),
+            ]
+
+groups = [ Group(name, **kwargs) for name, kwargs in my_groups ]
 
 # Groups keybindings
 group_key = 1
@@ -71,18 +78,24 @@ for i in groups:
     ])
     group_key += 1
 
+my_layout = {   "border_width": 2,
+                "margin": 10,
+                "border_focus": "e1acff",
+                "border_normal": "1D2330"
+            }
+
 layouts = [
     layout.Max(),
-    layout.Stack(num_stacks=2),
+    layout.Stack(num_stacks=2, **my_layout),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
     # layout.Matrix(),
-    layout.MonadTall(),
-    layout.MonadWide(),
+    layout.MonadTall(**my_layout),
+    layout.MonadWide(**my_layout),
     # layout.RatioTile(),
     # layout.Tile(),
-    layout.TreeTab(),
+    layout.TreeTab(**my_layout),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
