@@ -48,22 +48,28 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
+my_groups = [ 'WEB', 'TERM', 'SSH', 'VIRT', 'KPXC', 'MISC' ]
+groups = [ Group(i) for i in my_groups ]
 
+# Groups keybindings
+group_key = 1
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
+        Key([mod], str(group_key), lazy.group[i.name].toscreen(),
             desc="Switch to group {}".format(i.name)),
 
         # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
+        #Key([mod, "shift"], str(group_key), lazy.window.togroup(i.name, switch_group=True),
+        #    desc="Switch to & move focused window to group {}".format(i.name)),
+
         # Or, use below if you prefer not to switch to that group.
         # # mod1 + shift + letter of group = move focused window to group
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
         #     desc="move focused window to group {}".format(i.name)),
+
     ])
+    group_key += 1
 
 layouts = [
     layout.Max(),
