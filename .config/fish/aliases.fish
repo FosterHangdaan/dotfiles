@@ -30,7 +30,7 @@ alias scanhome "clamscan -ri $HOME"
 
 # Manage common configuration (dotfiles) via bare git repo
 # The bare repo is at ~/.commfig
-alias commfig "git --git-dir=$HOME/.commfig/ --work-tree=$HOME"
+alias dotfiles "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Package Manager
 if command -qs pacman

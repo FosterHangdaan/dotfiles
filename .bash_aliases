@@ -62,9 +62,9 @@ elif command -v pacman > /dev/null ; then
 	pmupdate() { sudo pacman -Syu ; }
 fi
 
-# Managing common configuration (dotfiles)
-# The bare repo is at ~/.commfig
-alias commfig='git --git-dir=${HOME}/.commfig/ --work-tree=$HOME'
+# Managing dotfiles repo
+# The bare repo is at ~/.dotfiles
+alias dotfiles='git --git-dir=${HOME}/.dotfiles/ --work-tree=$HOME'
 
 
 # Font Management
