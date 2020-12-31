@@ -52,7 +52,10 @@ my_groups = [   ('WEB', {'layout': 'monadtall'}),
                 ('TERM',{'layout': 'monadtall'}),
                 ('SSH', {'layout': 'tree'}),
                 ('VIRT',{'layout': 'monadtall'}),
+                ('CHAT',{'layout': 'stack'}),
                 ('KPXC',{'layout': 'monadtall'}),
+                ('MAIL',{'layout': 'monadtall'}),
+                ('STAT',{'layout': 'monadwide'}),
                 ('MISC',{'layout': 'monadtall'}),
             ]
 
