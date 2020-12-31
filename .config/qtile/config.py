@@ -83,7 +83,7 @@ for i in groups:
 
 my_layout = {   "border_width": 2,
                 "margin": 10,
-                "border_focus": "e1acff",
+                "border_focus": "f4005f",
                 "border_normal": "1D2330"
             }
 
