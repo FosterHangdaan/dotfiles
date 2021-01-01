@@ -50,6 +50,8 @@ if command -v apt > /dev/null ; then
 	pminstall() { sudo apt update && sudo apt install $@ ; }
 	pmremove() { sudo apt remove $@ ; }
 	pmpurge() { sudo apt purge $@ ; }
+	alias pmsearch="apt search"
+	alias pminfo="apt info"
 	pmupdate() {
 		sudo apt update && sudo apt upgrade && sudo apt autoremove
 		if [ -e "/var/run/reboot-required.pkgs" ] ; then
@@ -60,6 +62,8 @@ elif command -v pacman > /dev/null ; then
 	pminstall() { sudo pacman -S $@ ; }
 	pmremove() { sudo pacman -Rs $@ ; }
 	pmupdate() { sudo pacman -Syu ; }
+	alias pmsearch="pacman -Ss"
+	alias pminfo="pacman -Si"
 fi
 
 # Managing dotfiles repo

@@ -37,12 +37,16 @@ if command -qs pacman
 	alias pminstall	'sudo pacman -S'
 	alias pmremove	'sudo pacman -Rs'
 	alias pmupgrade	'sudo pacman -Syu'
+	alias pmsearch	'pacman -Ss'
+	alias pminfo		'pacman -Si'
 else if command -qs apt
 	alias pminstall	'sudo apt install'
 	alias pmremove	'sudo apt remove'
 	alias pmpurge		'sudo apt purge'
 	alias pmupdate	'sudo apt update'
 	alias pmupgrade	'sudo apt update && sudo apt upgrade'
+	alias pmsearch	'apt search'
+	alias pminfo		'apt info'
 end
 
 # Warn me when I'm overwriting files.
