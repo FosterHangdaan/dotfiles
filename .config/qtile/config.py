@@ -57,7 +57,7 @@ my_groups = [   ('WEB', {'layout': 'monadtall'}),
                 ('MAIL',{'layout': 'monadtall'}),
                 ('STAT',{'layout': 'monadwide'}),
                 ('MISC',{'layout': 'monadtall'}),
-            ]
+]
 
 groups = [ Group(name, **kwargs) for name, kwargs in my_groups ]
 
@@ -85,7 +85,7 @@ my_layout = {   "border_width": 2,
                 "margin": 10,
                 "border_focus": "f4005f",
                 "border_normal": "1D2330"
-            }
+}
 
 layouts = [
     layout.Max(),
@@ -103,71 +103,158 @@ layouts = [
     # layout.Zoomy(),
 ]
 
+# Monokai Color Theme
+colors = {  "black":    "1a1a1a",
+            "white":    "f6f6ef",
+            "dark":     "625e4c",
+            "grey":     "c4c5b5",
+            "red":      "f4005f",
+            "green":    "98e024",
+            "orange":   "fd971f",
+            "yellow":   "e0d561",
+            "purple":   "9d65ff",
+            "blue":     "58d1eb",
+}
+
 widget_defaults = dict(
-    font='Ubuntu',
+    font='Ubuntu Mono Bold',
     fontsize=12,
-    padding=3,
+    padding=2,
+    background=colors["black"],
 )
 extension_defaults = widget_defaults.copy()
 
-bar_size = 24
-screens = [
-    Screen( # Left monitor
-        top=bar.Bar(
-            [
-                widget.GroupBox(disable_drag=True),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(),
-                widget.CurrentLayout(),
-            ],
-            size=bar_size,
+def init_widgets():
+    return [
+        widget.Sep(linewidth=0, padding=10),
+        widget.TextBox(
+            font='FiraCode Nerd Font',
+            fontsize = 16,
+            padding = 5,
+            text='',
+            foreground=colors["red"],
         ),
-    ),
-    Screen( # Center monitor
-        top=bar.Bar(
-            [
-                widget.GroupBox(disable_drag=True),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(),
-                widget.CurrentLayout(),
-                widget.Net(interface="enp8s0"), # Replace with the appropriate interface
-                widget.Clock(format='%A - %B %d - %r'),
-                widget.QuickExit(default_text='[ logout ]')
-            ],
-            size=bar_size,
+        widget.Sep(linewidth=0, padding=10),
+        widget.GroupBox(
+            #font = "FiraCode Nerd Font Bold",
+            font = "Ubuntu Bold",
+            padding_x = 3,
+            margin_y = 5,
+            #spacing = 5,
+            disable_drag = True,
+            active = colors["green"],
+            inactive = colors["grey"],
+            highlight_method = "line",
+            highlight_color = colors["dark"],
+            this_current_screen_border = colors["red"],
+            this_screen_border = colors["red"],
+            other_current_screen_border = colors["black"],
+            other_screen_border = colors["black"],
         ),
-    ),
-    Screen( # Right monitor
-        top=bar.Bar(
-            [
-                widget.GroupBox(disable_drag=True),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Systray(),
-                widget.CurrentLayout(),
-            ],
-            size=bar_size,
+        widget.Prompt(
+            #background = colors["blue"],
+            foreground = colors["orange"],
+            prompt = 'Run  ',
+            padding = 10,
         ),
-    ),
+        widget.Sep(linewidth=0, padding=10),
+        widget.WindowName(
+            font='FiraCode Nerd Font Bold',
+            #font='UbuntuMono Nerd Font Bold',
+            padding=0,
+            foreground=colors["blue"],
+            fmt=': {}',
+        ),
+        # Widgets below are for main monitor only.
+        widget.Sep(linewidth=0, padding=10),
+        widget.TextBox(
+            text = '',
+            foreground = colors["red"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["red"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.CurrentLayout(
+            background = colors["red"],
+            foreground = colors["black"],
+            padding = 6,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["yellow"],
+            background = colors["red"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["yellow"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.Pacman(
+                foreground = colors["black"],
+                background = colors["yellow"],
+                update_interval = 1800,
+                fmt = 'Updates Available: {}'
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["red"],
+            background = colors["yellow"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["red"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.Net(
+            foreground = colors["black"],
+            background = colors["red"],
+            interface = "enp8s0",
+            padding = 6,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["yellow"],
+            background = colors["red"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["yellow"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.Clock(
+            foreground = colors["black"],
+            background = colors["yellow"],
+            format = ' %A, %B %d [ %I:%M %p ]',
+        ),
+        widget.Sep(linewidth=0, padding=10, background=colors["yellow"]),
+    ]
 
+screens = [
+    Screen(top=bar.Bar(init_widgets()[:11], size=24)), # Left Monitor
+    Screen(top=bar.Bar(init_widgets(), size=24)),     # Center Monitor
+    Screen(top=bar.Bar(init_widgets()[:11], size=24)), # Right Monitor
 ]
 
 # Drag floating layouts.
