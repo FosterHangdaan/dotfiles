@@ -15,7 +15,7 @@ if command -qs lsd
 
 	# Lazy Admin
 	function cds
-		cd $1; and lsd
+		cd $argv[1]; and ls
 	end
 end
 
