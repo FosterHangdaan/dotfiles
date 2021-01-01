@@ -66,6 +66,9 @@ fi
 # The bare repo is at ~/.dotfiles
 alias dotfiles='git --git-dir=${HOME}/.dotfiles/ --work-tree=$HOME'
 
-
 # Font Management
 alias listfonts="fc-list | cut -d':' -f1"
+
+# Warn me when I'm overwriting files.
+alias cp='cp -i'
+alias mv='mv -i'

@@ -44,3 +44,7 @@ else if command -qs apt
 	alias pmupdate	'sudo apt update'
 	alias pmupgrade	'sudo apt update && sudo apt upgrade'
 end
+
+# Warn me when I'm overwriting files.
+alias cp 'cp -i'
+alias mv 'mv -i'
