@@ -56,6 +56,9 @@ set number
 set tabstop=2
 set shiftwidth=2
 
+" Set a vim-airline theme
+let g:airline_theme='base16_monokai'
+
 " Mappings
 " -------------------------------------------------------------------------------------------
 
@@ -63,7 +66,5 @@ set shiftwidth=2
 " Plugins
 " -------------------------------------------------------------------------------------------
 
-" Enable vim-airline
-if filereadable("/usr/share/vim/registry/vim-airline.yaml")
-	let g:airline_powerline_fonts = 1
-endif
+" Enable vim-airline fonts
+let g:airline_powerline_fonts = 1
