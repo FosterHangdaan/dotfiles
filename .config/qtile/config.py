@@ -204,7 +204,7 @@ def init_widgets():
         widget.Pacman(
                 foreground = colors["black"],
                 background = colors["yellow"],
-                update_interval = 1800,
+                update_interval = 600,
                 fmt = 'Updates Available: {}'
         ),
         widget.TextBox(
