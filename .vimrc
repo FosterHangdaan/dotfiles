@@ -66,5 +66,13 @@ let g:airline_theme='base16_monokai'
 " Plugins
 " -------------------------------------------------------------------------------------------
 
+" VIM AIRLINE
+" -----------
 " Enable vim-airline fonts
 let g:airline_powerline_fonts = 1
+
+" Display all buffers when there is only one tab open
+let g:airline#extensions#tabline#enabled = 1
+
+" Choose the path format when tabline status (above) is enabled.
+let g:airline#extensions#tabline#formatter = 'unique_tail'
