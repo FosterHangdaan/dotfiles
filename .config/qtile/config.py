@@ -92,16 +92,16 @@ layouts = [
     layout.Max(),
     layout.Stack(num_stacks=2, **my_layout),
     # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
-    # layout.Columns(),
-    # layout.Matrix(),
+    #layout.Bsp(**my_layout),
+    #layout.Columns(**my_layout),
+    layout.Matrix(**my_layout),
     layout.MonadTall(**my_layout),
     layout.MonadWide(**my_layout),
-    # layout.RatioTile(),
-    # layout.Tile(),
+    #layout.RatioTile(**my_layout),
+    layout.Tile(**my_layout),
     layout.TreeTab(**my_layout),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    #layout.VerticalTile(**my_layout),
+    #layout.Zoomy(**my_layout),
 ]
 
 # Monokai Color Theme
