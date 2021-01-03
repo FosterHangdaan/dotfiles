@@ -253,9 +253,9 @@ def init_widgets():
     ]
 
 screens = [
-    Screen(top=bar.Bar(init_widgets()[:11], size=24)), # Left Monitor
-    Screen(top=bar.Bar(init_widgets(), size=24)),     # Center Monitor
-    Screen(top=bar.Bar(init_widgets()[:11], size=24)), # Right Monitor
+    Screen(top=bar.Bar(init_widgets(), size=24)),       # Center Monitor
+    Screen(top=bar.Bar(init_widgets()[:11], size=24)),  # Left Monitor
+    Screen(top=bar.Bar(init_widgets()[:11], size=24)),  # Right Monitor
 ]
 
 # Drag floating layouts.
