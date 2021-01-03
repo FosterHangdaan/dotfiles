@@ -204,7 +204,7 @@ def init_widgets():
                 foreground = colors["black"],
                 background = colors["yellow"],
                 update_interval = 600,
-                fmt = 'Updates Available: {}'
+                fmt = 'Updates: {}',
         ),
         widget.TextBox(
             text = '',
@@ -225,6 +225,7 @@ def init_widgets():
             foreground = colors["black"],
             background = colors["red"],
             interface = "enp8s0",
+            format = "{down} ↓↑ {up}",
             padding = 6,
         ),
         widget.TextBox(
