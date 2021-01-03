@@ -9,6 +9,19 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = "kitty"
 
+# Monokai Color Theme
+colors = {  "black":    "1a1a1a",
+            "white":    "f6f6ef",
+            "dark":     "625e4c",
+            "grey":     "c4c5b5",
+            "red":      "f4005f",
+            "green":    "98e024",
+            "orange":   "fd971f",
+            "yellow":   "e0d561",
+            "purple":   "9d65ff",
+            "blue":     "58d1eb",
+}
+
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),
@@ -97,26 +110,24 @@ layouts = [
     layout.MonadWide(**my_layout),
     #layout.RatioTile(**my_layout),
     layout.Tile(**my_layout),
-    layout.TreeTab(**my_layout),
+    layout.TreeTab(
+        font = "Ubuntu Bold",
+        fontsize = 12,
+        padding_y = 5,
+        panel_width = 250,
+        active_bg = colors["red"],
+        active_fg = colors["white"],
+        inactive_bg = colors["dark"],
+        inactive_fg = colors["white"],
+        section_fg = colors["yellow"],
+        bg_color = colors["black"],
+    ),
     #layout.VerticalTile(**my_layout),
     #layout.Zoomy(**my_layout),
 ]
 
-# Monokai Color Theme
-colors = {  "black":    "1a1a1a",
-            "white":    "f6f6ef",
-            "dark":     "625e4c",
-            "grey":     "c4c5b5",
-            "red":      "f4005f",
-            "green":    "98e024",
-            "orange":   "fd971f",
-            "yellow":   "e0d561",
-            "purple":   "9d65ff",
-            "blue":     "58d1eb",
-}
-
 widget_defaults = dict(
-    font='Ubuntu Mono Bold',
+    font='Ubuntu Bold',
     fontsize=12,
     padding=2,
     background=colors["black"],
