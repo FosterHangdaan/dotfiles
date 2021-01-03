@@ -50,14 +50,12 @@ keys = [
 ]
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
-                ('TERM',{'layout': 'monadtall'}),
-                ('SSH', {'layout': 'tree'}),
+                ('ADM', {'layout': 'monadtall'}),
+                ('CODE',{'layout': 'tile'}),
                 ('VIRT',{'layout': 'monadtall'}),
-                ('CHAT',{'layout': 'stack'}),
-                ('KPXC',{'layout': 'monadtall'}),
-                ('MAIL',{'layout': 'monadtall'}),
-                ('STAT',{'layout': 'monadwide'}),
-                ('MISC',{'layout': 'monadtall'}),
+                ('CHAT',{'layout': 'monadtall'}),
+                ('GFX',{'layout': 'monadtall'}),
+                ('UTILS',{'layout': 'treetab'}),
 ]
 
 groups = [ Group(name, **kwargs) for name, kwargs in my_groups ]
