@@ -214,8 +214,48 @@ def init_widgets():
         widget.Pacman(
                 foreground = colors["black"],
                 background = colors["yellow"],
-                update_interval = 600,
                 fmt = 'Updates: {}',
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["red"],
+            background = colors["yellow"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["red"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.CPU(
+            foreground = colors["black"],
+            background = colors["red"],
+            format = '{freq_current}GHz {load_percent}%',
+            padding = 6,
+        ),
+
+        widget.TextBox(
+            text = '',
+            foreground = colors["yellow"],
+            background = colors["red"],
+            padding = 0,
+            width = 31,
+            fontsize = 75,
+        ),
+        widget.TextBox(
+            text = '',
+            foreground = colors["black"],
+            background = colors["yellow"],
+            padding = 6,
+            fontsize = 20,
+        ),
+        widget.Memory(
+                foreground = colors["black"],
+                background = colors["yellow"],
         ),
         widget.TextBox(
             text = '',
