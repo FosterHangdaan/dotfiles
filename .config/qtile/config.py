@@ -149,7 +149,7 @@ def init_widgets():
             #font = "FiraCode Nerd Font Bold",
             font = "Ubuntu Bold",
             padding_x = 3,
-            margin_y = 5,
+            margin_y = 2,
             #spacing = 5,
             disable_drag = True,
             active = colors["green"],
