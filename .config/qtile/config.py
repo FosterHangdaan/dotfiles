@@ -146,11 +146,9 @@ def init_widgets():
         ),
         widget.Sep(linewidth=0, padding=10),
         widget.GroupBox(
-            #font = "FiraCode Nerd Font Bold",
             font = "Ubuntu Bold",
             padding_x = 3,
             margin_y = 5,
-            #spacing = 5,
             disable_drag = True,
             active = colors["green"],
             inactive = colors["grey"],
@@ -162,7 +160,6 @@ def init_widgets():
             other_screen_border = colors["black"],
         ),
         widget.Prompt(
-            #background = colors["blue"],
             foreground = colors["orange"],
             prompt = 'Run  ',
             padding = 10,
@@ -170,7 +167,6 @@ def init_widgets():
         widget.Sep(linewidth=0, padding=10),
         widget.WindowName(
             font='FiraCode Nerd Font Bold',
-            #font='UbuntuMono Nerd Font Bold',
             padding=0,
             foreground=colors["blue"],
             fmt=': {}',
