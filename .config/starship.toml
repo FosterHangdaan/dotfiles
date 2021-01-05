@@ -18,8 +18,8 @@ add_newline = true
 
 # Prompt Format
 format = """
-$username$hostname$git_status$git_state
-$directory$git_branch$python$character"""
+$username$hostname$git_branch$git_status$git_state$python
+$directory$character"""
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -37,45 +37,45 @@ style = "bold cyan"
 format = "[$path$read_only ]($style)"
 
 [username]
-style_user = "bg:#268bd2 fg:white"
-style_root = "bg:#268bd2 fg:red bold"
+style_user = "bg:#f4005f fg:#1a1a1a"
+style_root = "bg:#f4005f fg:white"
 format = "[  $user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[[@](bg:#268bd2 bold)$hostname ](bg:#268bd2 fg:white)'
+format = '[@$hostname ](bg:#f4005f fg:#1a1a1a bold)'
 disabled = false
 
 [git_status]
-style = "bg:#6c71c4 bold"
-format = '([   $all_status$ahead_behind]($style))'
+style = "fg:#1a1a1a bg:#9d65ff bold"
+format = '([| $all_status$ahead_behind]($style))'
 conflicted = "x${count} "
-ahead = " x${count} "
-behind = " x${count} "
+ahead = "x${count} "
+behind = "x${count} "
 diverged = "x${count} "
-untracked = " x${count} "
+untracked = "x${count} "
 stashed = "x${count} "
-modified = " x${count} "
-staged = " x${count} "
-renamed = "﬍ x${count} "
-deleted = " x${count} "
+modified = "x${count} "
+staged = "x${count} "
+renamed = "﬍x${count} "
+deleted = "x${count} "
 
 [git_branch]
-style = "fg:purple bold"
+style = "fg:#1a1a1a bg:#9d65ff bold"
 symbol = " "
-format = 'on [$symbol$branch]($style) '
+format = '[ $symbol$branch ]($style)'
 truncation_length = 10
 truncation_symbol = "..."
 
 [git_state]
-style = "bg:#6c76c4 bold"
-format = '\([$state($progress_current/$progress_total)]($style)\)'
+style = "fg:#1a1a1a bg:#9d65ff bold"
+format = '\([| $state($progress_current/$progress_total)]($style)\)'
 
 [python]
-style = "yellow bold"
-symbol = "🐍 "
-format = 'via [${symbol}${pyenv_prefix}${version}(\($virtualenv\))]($style) '
+style = "fg:#1a1a1a bg:#e0d561 bold"
+symbol = " "
+format = '[ ${symbol}${pyenv_prefix}${version}(\($virtualenv\)) ]($style)'
 python_binary = "python3"
 scan_for_pyfiles = true
