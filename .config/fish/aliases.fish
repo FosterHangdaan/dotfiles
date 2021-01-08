@@ -49,6 +49,11 @@ else if command -qs apt
 	alias pminfo		'apt info'
 end
 
+# Who needs etcher?
+function etch
+	sudo dd if=$argv[1] of=$argv[2] bs=8M status=progress
+end
+
 # Warn me when I'm overwriting files.
 alias cp 'cp -i'
 alias mv 'mv -i'
