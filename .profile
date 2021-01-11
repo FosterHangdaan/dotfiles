@@ -30,17 +30,17 @@ fi
 export TZ='America/Toronto'
 
 # set favourite editor
-if [ -x '/usr/bin/vim' ] ; then
+if [ -x '/usr/bin/vim' ]; then
 	export EDITOR='/usr/bin/vim'
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
+if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
@@ -50,3 +50,10 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
+# Rust directories and paths
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+if [ -d "$CARGO_HOME/bin" ]; then
+	PATH="$PATH:$CARGO_HOME/bin"
+fi
