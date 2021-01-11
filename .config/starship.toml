@@ -18,7 +18,7 @@ add_newline = true
 
 # Prompt Format
 format = """
-$username$hostname$git_branch$git_status$git_state$python
+$username$hostname$git_branch$git_status$git_state$python$rust
 $directory$character"""
 
 # Disable the package module, hiding it from the prompt completely
@@ -79,3 +79,8 @@ symbol = " "
 format = '[ ${symbol}${pyenv_prefix}${version}(\($virtualenv\)) ]($style)'
 python_binary = "python3"
 scan_for_pyfiles = true
+
+[rust]
+style = "fg:#1a1a1a bg:#e0d561 bold"
+symbol = " "
+format = "[ $symbol$version ]($style)"
