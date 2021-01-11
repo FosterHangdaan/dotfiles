@@ -52,7 +52,7 @@ set laststatus=2
 " Display line numbers on the left
 set number
 
-" Indentation
+" Default indentation
 set tabstop=2
 set shiftwidth=2
 
