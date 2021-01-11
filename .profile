@@ -43,3 +43,10 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/.local/bin:$PATH"
 fi
+
+# XDG Base Directory Specification
+# More information at https://specifications.freedesktop.org
+# and at https://wiki.archlinux.org/index.php/XDG_Base_Directory
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+XDG_DATA_HOME="$HOME/.local/share"
