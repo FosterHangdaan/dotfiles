@@ -9,9 +9,9 @@
 
 if command -qs lsd
 	# Listing configs
-	alias ls    'lsd'
-	alias lsl   'lsd -l'
-	alias tree	'lsd --tree'
+	alias ls    'lsd --group-dirs first'
+	alias lsl   'lsd --group-dirs first -l'
+	alias tree	'lsd --group-dirs first --tree'
 
 	# Lazy Admin
 	function cds
