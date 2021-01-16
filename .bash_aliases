@@ -36,7 +36,7 @@ fi
 alias myftp='lftp foster@ftp.fhang.lan'
 
 # Backup home directory to NAS
-alias synchome="rsync -ah --progress --delete --delete-excluded --exclude='Downloads' --exclude='.cache' ${HOME}/ silentcartographer:/srv/backups/foster/home/"
+alias synchome="rsync -ah --compress --progress --delete --delete-excluded --exclude='Downloads' --exclude='.cache' ${HOME}/ silentcartographer:/srv/backups/foster/home/"
 
 # Perform virus scan on home directory.
 alias scanhome="clamscan -ri $HOME"
