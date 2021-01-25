@@ -284,7 +284,7 @@ def init_widgets():
             fontsize = 75,
         ),
         widget.TextBox(
-            text = '',
+            text = '',
             foreground = colors["black"],
             background = colors["yellow"],
             padding = 6,
