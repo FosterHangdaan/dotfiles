@@ -233,7 +233,6 @@ def init_widgets():
             format = '{freq_current}GHz {load_percent}%',
             padding = 6,
         ),
-
         widget.TextBox(
             text = '',
             foreground = colors["yellow"],
@@ -262,17 +261,18 @@ def init_widgets():
             fontsize = 75,
         ),
         widget.TextBox(
-            text = '',
+            text = '',
             foreground = colors["black"],
             background = colors["red"],
             padding = 6,
             fontsize = 20,
         ),
-        widget.Net(
+        widget.ThermalSensor(
             foreground = colors["black"],
             background = colors["red"],
-            interface = "enp8s0",
-            format = "{down} ↓↑ {up}",
+            foreground_alert = colors["white"],
+            fmt = 'CPU Temp: {}',
+            tag_sensor = "CPUTIN",
             padding = 6,
         ),
         widget.TextBox(
