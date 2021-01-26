@@ -18,7 +18,7 @@ add_newline = true
 
 # Prompt Format
 format = """
-$username$hostname$git_branch$git_status$git_state$python$rust
+$username$hostname$git_branch$git_status$git_state$python$rust$nodejs
 $directory$character"""
 
 # Disable the package module, hiding it from the prompt completely
@@ -84,3 +84,9 @@ scan_for_pyfiles = true
 style = "fg:#1a1a1a bg:#e0d561 bold"
 symbol = " "
 format = "[ $symbol$version ]($style)"
+
+[nodejs]
+style = "fg:#1a1a1a bg:#e0d561 bold"
+symbol = "⬢ "
+format = "[ $symbol($version) ]($style)"
+not_capable_style = "fg:#f6f6ef bg:#e0d561 bold"
