@@ -11,6 +11,7 @@ if command -qs lsd
 	# Listing configs
 	alias ls    'lsd --group-dirs first'
 	alias lsl   'lsd --group-dirs first -l'
+	alias lsla  'lsd --group-dirs first -lA'
 	alias tree	'lsd --group-dirs first --tree'
 
 	# Lazy Admin

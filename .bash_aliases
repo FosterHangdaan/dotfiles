@@ -27,6 +27,7 @@ fi
 if command -v lsd > /dev/null ; then
 	alias ls='lsd --group-dirs first'
 	alias lsl='lsd --group-dirs first -l'
+	alias lsla='lsd --group-dirs first -lA'
 	alias tree='lsd --tree --group-dirs first'
 	cds() {	cd $1 && lsd ; }
 else
