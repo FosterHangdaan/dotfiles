@@ -29,6 +29,16 @@ keys = [
     Key([mod], "j", lazy.layout.up(),
         desc="Move focus up in stack pane"),
 
+    # Resize windows in current stack
+    Key([mod], "i", lazy.layout.grow(),
+        desc="Grow window"),
+    Key([mod], "m", lazy.layout.shrink(),
+        desc="Shrink window"),
+    Key([mod], "n", lazy.layout.normalize(),
+        desc="Normalize window"),
+    Key([mod], "o", lazy.layout.maximize(),
+        desc="Maximize window"),
+
     # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
