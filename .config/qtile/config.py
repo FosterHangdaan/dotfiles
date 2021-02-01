@@ -63,19 +63,26 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    #Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+    #    desc="Toggle between split and unsplit sides of stack"),
 
-    # Toggle between different layouts as defined below
+    # Main Keybindings
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "control"], "Return", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-
-    Key([mod, "control"], "l", lazy.spawn("light-locker-command -l"), desc="Lock the session."),
+    Key(["mod1", "control"], "l", lazy.spawn("light-locker-command -l"), desc="Lock the session."),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+
+    # Launch Applications (MOD + ALT)
+    Key(["mod1", "shift"], "j", lazy.spawn("joplin"), desc="Launch Joplin"),
+    Key(["mod1", "shift"], "w", lazy.spawn("icecat"), desc="Launch IceCat"),
+    Key(["mod1", "shift"], "k", lazy.spawn("keepassxc"), desc="Launch KeepassXC"),
+    Key(["mod1", "shift"], "m", lazy.spawn("IceDove"), desc="Launch IceDove Mail"),
+    Key(["mod1", "shift"], "g", lazy.spawn("gimp"), desc="Launch GIMP"),
+    Key(["mod1", "shift"], "v", lazy.spawn("virt-manager"), desc="Launch Virt-Manager"),
+    Key(["mod1", "shift"], "i", lazy.spawn(terminal + " irssi"), desc="Launch IRSSI"),
 ]
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
