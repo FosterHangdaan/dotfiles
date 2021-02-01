@@ -30,14 +30,20 @@ keys = [
         desc="Move focus up in stack pane"),
 
     # Resize windows in current stack
-    Key([mod], "i", lazy.layout.grow(),
+    Key([mod], "h", lazy.layout.grow(),
         desc="Grow window"),
-    Key([mod], "m", lazy.layout.shrink(),
+    Key([mod], "l", lazy.layout.shrink(),
         desc="Shrink window"),
+
+    # Window Properties
     Key([mod], "n", lazy.layout.normalize(),
         desc="Normalize window"),
-    Key([mod], "o", lazy.layout.maximize(),
-        desc="Maximize window"),
+    Key([mod], "m", lazy.layout.maximize(),
+        desc="Toggle window between minimum and maximum sizes"),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(),
+        desc="Toggle floating"),
+    Key([mod, "shift"], "m", lazy.window.toggle_fullscreen(),
+        desc="Toggle fullscreen"),
 
     # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down(),
@@ -111,15 +117,15 @@ my_layout = {   "border_width": 2,
 
 layouts = [
     layout.Max(),
-    layout.Stack(num_stacks=2, **my_layout),
+    #layout.Stack(num_stacks=2, **my_layout),
     # Try more layouts by unleashing below layouts.
     #layout.Bsp(**my_layout),
     #layout.Columns(**my_layout),
-    layout.Matrix(**my_layout),
+    #layout.Matrix(**my_layout),
     layout.MonadTall(**my_layout),
     layout.MonadWide(**my_layout),
     #layout.RatioTile(**my_layout),
-    layout.Tile(**my_layout),
+    #layout.Tile(**my_layout),
     layout.TreeTab(
         font = "Ubuntu Bold",
         fontsize = 12,
@@ -134,6 +140,7 @@ layouts = [
     ),
     #layout.VerticalTile(**my_layout),
     #layout.Zoomy(**my_layout),
+    layout.Floating(**my_layout),
 ]
 
 widget_defaults = dict(
