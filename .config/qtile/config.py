@@ -87,7 +87,8 @@ keys = [
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
                 ('ADM', {'layout': 'treetab'}),
-                ('CODE',{'layout': 'monadwide'}),
+                ('DEV',{'layout': 'monadwide'}),
+                ('CODE',{'layout': 'monadtall'}),
                 ('VIRT',{'layout': 'treetab'}),
                 ('CHAT',{'layout': 'monadtall'}),
                 ('GFX',{'layout': 'monadtall'}),
@@ -153,7 +154,7 @@ layouts = [
 widget_defaults = dict(
     font='Ubuntu Bold',
     fontsize=12,
-    padding=2,
+    padding=1,
     background=colors["black"],
 )
 extension_defaults = widget_defaults.copy()
