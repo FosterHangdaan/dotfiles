@@ -87,8 +87,8 @@ keys = [
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
                 ('ADM', {'layout': 'treetab'}),
-                ('DEV',{'layout': 'monadwide'}),
                 ('CODE',{'layout': 'monadtall'}),
+                ('DEV',{'layout': 'monadwide'}),
                 ('VIRT',{'layout': 'treetab'}),
                 ('CHAT',{'layout': 'monadtall'}),
                 ('GFX',{'layout': 'monadtall'}),
