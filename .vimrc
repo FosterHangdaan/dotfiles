@@ -56,8 +56,8 @@ set number
 set tabstop=2
 set shiftwidth=2
 
-" Set a vim-airline theme
-let g:airline_theme='base16_monokai'
+" Automatically resize splits when window size changes.
+"autocmd VimResized * wincmd =
 
 " Mappings
 " -------------------------------------------------------------------------------------------
@@ -78,6 +78,18 @@ map <leader>k :wincmd k<cr>
 map <leader>v :vsplit<cr>
 map <leader>s :split<cr>
 
+" Resize window
+map <leader>= :wincmd +<cr>
+map <leader>- :wincmd -<cr>
+map <leader>< :wincmd <<cr>
+map <leader>> :wincmd ><cr>
+
+" Save
+map <leader>w : w<cr>
+
+" Quit
+map <leader>q : q<cr>
+
 " Plugins
 " -------------------------------------------------------------------------------------------
 
@@ -85,6 +97,9 @@ map <leader>s :split<cr>
 " -----------
 " Enable vim-airline fonts
 let g:airline_powerline_fonts = 1
+
+" Set a vim-airline theme
+let g:airline_theme='base16_monokai'
 
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
