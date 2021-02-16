@@ -62,8 +62,16 @@ let g:airline_theme='base16_monokai'
 " Mappings
 " -------------------------------------------------------------------------------------------
 let mapleader=';'
+
+" Switch tabs/windows
 map <leader>f :bn<cr>
 map <leader>d :bp<cr>
+map <leader>e :wincmd h<cr>
+map <leader>r :wincmd l<cr>
+
+" Split window
+map <leader>g :vsplit<cr>
+map <leader>t :split<cr>
 
 " Plugins
 " -------------------------------------------------------------------------------------------
