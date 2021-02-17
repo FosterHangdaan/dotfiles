@@ -10,7 +10,7 @@ Dotfiles are configuration files used to customize the look and behaviour of a U
 - [Foster Hangdaan](http://www.fosterhangdaan.com)
 
 # License
-Copyright © 2021, Foster Hangdaan
+Copyright © 2021, Foster Hangdaan<br />
 This repository is [ISC](https://github.com/FosterHangdaan/dotfiles/blob/master/.github/LICENSE.txt) licensed.
 
 # Screenshots
