@@ -11,6 +11,21 @@ I advise that you first attempt to understand the contents of the files before a
 # Owner
 - [Foster Hangdaan](http://www.fosterhangdaan.com)
 
+# Applications
+If you want to mimic the look of my system, then you'll need an Arch-based system and the following applications.
+
+| Application | Description |
+| ----------- | ----------- |
+| [Qtile](http://www.qtile.org) | Tiling window manager |
+| [Kitty](https://github.com/kovidgoyal/kitty) | Terminal with ligature support |
+| [Starship](https://github.com/starship/starship) | Customizeable Command Prompt |
+| [FISH](https://fishshell.com/) | The friendly and interactive command-line shell. |
+| Vim | Vi-Improved Text Editor |
+| Nitrogen | Desktop background setter for X-Window. |
+| LightDM | Login Manager |
+| Xorg | Display Server |
+| Picom | Window Compositor |
+
 # License
 Copyright © 2021, Foster Hangdaan<br />
 This repository is under the [Unlicense](https://github.com/FosterHangdaan/dotfiles/blob/master/.github/LICENSE.txt) license.
