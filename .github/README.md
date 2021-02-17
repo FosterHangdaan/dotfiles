@@ -9,6 +9,10 @@ Dotfiles are configuration files used to customize the look and behaviour of a U
 # Owner
 - [Foster Hangdaan](http://www.fosterhangdaan.com)
 
+# License
+Copyright © 2021, Foster Hangdaan
+This repository is [ISC](https://github.com/FosterHangdaan/dotfiles/blob/master/.github/LICENSE.txt) licensed.
+
 # Screenshots
 ![screenshot of qtile window configuration](images/qtile-screenshot-01.png)
 ![screenshot of qtile htop configuration](images/qtile-screenshot-02.png)
