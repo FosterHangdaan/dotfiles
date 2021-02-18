@@ -29,8 +29,8 @@ alias synchome "rsync -ah --compress --progress --delete --delete-excluded --exc
 # Perform virus scan on home directory.
 alias scanhome "clamscan -ri $HOME"
 
-# Manage common configuration (dotfiles) via bare git repo
-# The bare repo is at ~/.commfig
+# Manage dotfiles via bare git repo
+# The bare repo is at ~/.dotfiles
 alias dotfiles "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Package Manager
