@@ -2,7 +2,7 @@ from typing import List  # noqa: F401
 
 import os, subprocess
 from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -232,10 +232,16 @@ def init_widgets():
             padding = 6,
             fontsize = 20,
         ),
-        widget.Pacman(
+        widget.CheckUpdates(
                 foreground = colors["black"],
                 background = colors["yellow"],
-                fmt = 'Updates: {}',
+                colour_have_updates = colors["black"],
+                colour_no_updates = colors["black"],
+                fmt = '{}',
+                display_format = 'Updates: {updates}',
+                no_update_string = 'No Updates',
+                distro = 'Arch',
+                update_interval = 60 * 30,
         ),
         widget.TextBox(
             text = '',
@@ -346,20 +352,13 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
