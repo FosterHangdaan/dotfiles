@@ -10,6 +10,7 @@
 if command -qs lsd
 	# Listing configs
 	alias ls    'lsd --group-dirs first'
+	alias lsa		'lsd --group-dirs first -A'
 	alias lsl   'lsd --group-dirs first -l'
 	alias lsla  'lsd --group-dirs first -lA'
 	alias tree	'lsd --group-dirs first --tree'

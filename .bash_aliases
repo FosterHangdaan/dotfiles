@@ -26,6 +26,7 @@ fi
 # navigation and listing
 if command -v lsd > /dev/null ; then
 	alias ls='lsd --group-dirs first'
+	alias lsa='lsd --group-dirs first -A'
 	alias lsl='lsd --group-dirs first -l'
 	alias lsla='lsd --group-dirs first -lA'
 	alias tree='lsd --tree --group-dirs first'
