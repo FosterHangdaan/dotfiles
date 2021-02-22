@@ -26,6 +26,8 @@ If you want to mimic the look of my system, then you'll need an Arch-based syste
 | Xorg | Display Server |
 | Picom | Window Compositor |
 
+The font I use is **Caskaydia Cove Nerd Font** from [nerdfonts.com](https://www.nerdfonts.com).
+
 # License
 Copyright © 2021, Foster Hangdaan<br />
 This repository is under the [Unlicense](https://github.com/FosterHangdaan/dotfiles/blob/master/.github/LICENSE.txt) license.
