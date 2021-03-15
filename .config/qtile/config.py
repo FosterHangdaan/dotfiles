@@ -46,9 +46,9 @@ keys = [
         desc="Toggle fullscreen"),
 
     # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down(),
+    Key([mod, "control"], "j", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up(),
+    Key([mod, "control"], "k", lazy.layout.shuffle_up(),
         desc="Move window up in current stack "),
 
     # Switch window focus to other pane(s) of stack
