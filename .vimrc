@@ -59,6 +59,15 @@ set shiftwidth=2
 " Automatically resize splits when window size changes.
 "autocmd VimResized * wincmd =
 
+" Highlight the current line
+set cursorline
+
+" Set cursor line and cursor column colors
+highlight CursorLineNR cterm=NONE
+highlight CursorLine cterm=NONE ctermbg=236
+highlight CursorColumn cterm=NONE ctermbg=236
+
+
 " Mappings
 " -------------------------------------------------------------------------------------------
 nnoremap <SPACE> <Nop>
