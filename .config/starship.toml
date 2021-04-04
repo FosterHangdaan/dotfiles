@@ -33,6 +33,7 @@ disabled = false
 [directory]
 truncation_symbol = ".../"
 truncate_to_repo = true
+truncation_length = 2
 style = "bold cyan"
 format = "[$path$read_only ]($style)"
 
