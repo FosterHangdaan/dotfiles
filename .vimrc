@@ -67,6 +67,10 @@ highlight CursorLineNR cterm=NONE
 highlight CursorLine cterm=NONE ctermbg=236
 highlight CursorColumn cterm=NONE ctermbg=236
 
+" Enable code folding
+set foldmethod=indent
+set foldlevelstart=1
+
 
 " Mappings
 " -------------------------------------------------------------------------------------------
