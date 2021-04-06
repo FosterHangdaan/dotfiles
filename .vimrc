@@ -71,6 +71,11 @@ highlight CursorColumn cterm=NONE ctermbg=236
 set foldmethod=indent
 set foldlevelstart=1
 
+" Change cursor on mode
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 
 " Mappings
 " -------------------------------------------------------------------------------------------
