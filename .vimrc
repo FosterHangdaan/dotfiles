@@ -1,8 +1,8 @@
 "  ______ _    _ 
 " |  ____| |  | |
-" | |__  | |__| | Author:		Foster Hangdaan
-" |  __| |  __  | Website:	www.fosterhangdaan.com
-" | |    | |  | | Github:		https://github.com/FosterHangdaan
+" | |__  | |__| | Author:   Foster Hangdaan
+" |  __| |  __  | Website:  https://www.fosterhangdaan.com
+" | |    | |  | | Github:   https://github.com/FosterHangdaan
 " |_|    |_|  |_|
 "
 " Personalized VIM experience just for me.
@@ -49,8 +49,8 @@ set laststatus=2
 " Enable use of the mouse for all modes
 "set mouse=a
 
-" Display line numbers on the left
-set number
+" Display hybrid line numbers on the left
+set number relativenumber
 
 " Default indentation
 set tabstop=2
@@ -77,6 +77,13 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 
+" Functions
+" -------------------------------------------------------------------------------------------
+function! RelativeNumbersToggle()
+	:set relativenumber!
+endfunction
+
+
 " Mappings
 " -------------------------------------------------------------------------------------------
 nnoremap <SPACE> <Nop>
@@ -101,6 +108,9 @@ map <leader>= :wincmd +<cr>
 map <leader>- :wincmd -<cr>
 map <leader>< :wincmd <<cr>
 map <leader>> :wincmd ><cr>
+
+" Toggle Relative Line Numbers
+map <leader>r :call RelativeNumbersToggle()<cr>
 
 " Save
 map <leader>w : w<cr>
