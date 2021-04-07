@@ -72,9 +72,13 @@ set foldmethod=indent
 set foldlevelstart=1
 
 " Change cursor on mode
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+"let &t_SI = "\<Esc>[6 q"
+"let &t_SR = "\<Esc>[4 q"
+"let &t_EI = "\<Esc>[2 q"
+
+" Show indent lines
+"set listchars=tab:\|\ 
+"set list
 
 
 " Functions
@@ -108,6 +112,10 @@ map <leader>= :wincmd +<cr>
 map <leader>- :wincmd -<cr>
 map <leader>< :wincmd <<cr>
 map <leader>> :wincmd ><cr>
+
+" NERDTree
+map <C-p> :NERDTreeToggle<cr>
+map <leader>n :NERDTreeFocus<cr>
 
 " Toggle Relative Line Numbers
 map <leader>r :call RelativeNumbersToggle()<cr>
