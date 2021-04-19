@@ -86,11 +86,11 @@ keys = [
 ]
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
-                ('ADM', {'layout': 'treetab'}),
-                ('CODE',{'layout': 'monadtall'}),
-                ('DEV',{'layout': 'monadwide'}),
+                ('ADM', {'layout': 'monadwide'}),
+                ('CODE',{'layout': 'monadwide'}),
+                ('DEV',{'layout': 'monadtall'}),
                 ('VIRT',{'layout': 'treetab'}),
-                ('CHAT',{'layout': 'monadtall'}),
+                ('CHAT',{'layout': 'treetab'}),
                 ('GFX',{'layout': 'monadtall'}),
                 ('UTILS',{'layout': 'treetab'}),
 ]
