@@ -79,3 +79,6 @@ alias listfonts="fc-list | cut -d':' -f1"
 # Warn me when I'm overwriting files.
 alias cp='cp -i'
 alias mv='mv -i'
+
+# Programs
+alias monero='monero-wallet-gui'
