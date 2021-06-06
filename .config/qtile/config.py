@@ -241,7 +241,7 @@ def init_widgets():
                 display_format = 'Updates: {updates}',
                 no_update_string = 'No Updates',
                 distro = 'Arch',
-                update_interval = 60 * 10,
+                update_interval = 60,
         ),
         widget.TextBox(
             text = '',
