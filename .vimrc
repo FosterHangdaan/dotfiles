@@ -10,6 +10,7 @@
 " To source this file, place the line below to ~/.vimrc:
 " so /path/to/source
 
+" -------------------------------------------------------------------------------------------
 " General Settings
 " -------------------------------------------------------------------------------------------
 " Set 'nocompatible' to ward off unexptected things that your distro might
@@ -62,11 +63,6 @@ set shiftwidth=2
 " Highlight the current line
 set cursorline
 
-" Set cursor line and cursor column colors
-highlight CursorLineNR cterm=NONE
-highlight CursorLine cterm=NONE ctermbg=236
-highlight CursorColumn cterm=NONE ctermbg=236
-
 " Enable code folding
 set foldmethod=indent
 set foldlevelstart=1
@@ -80,7 +76,16 @@ set foldlevelstart=1
 "set listchars=tab:\|\ 
 "set list
 
+" -------------------------------------------------------------------------------------------
+" Theming
+" -------------------------------------------------------------------------------------------
+" Set cursor line and cursor column colors
+highlight CursorLineNR cterm=NONE
+highlight CursorLine cterm=NONE ctermbg=236
+highlight CursorColumn cterm=NONE ctermbg=236
+highlight VertSplit ctermfg=7 ctermbg=7 cterm=none
 
+" -------------------------------------------------------------------------------------------
 " Functions
 " -------------------------------------------------------------------------------------------
 function! RelativeNumbersToggle()
@@ -88,14 +93,23 @@ function! RelativeNumbersToggle()
 endfunction
 
 
+" -------------------------------------------------------------------------------------------
 " Mappings
 " -------------------------------------------------------------------------------------------
 nnoremap <SPACE> <Nop>
 let mapleader=' '
 
-" Switch tabs
+" Buffers
 map <leader>i :bn<cr>
 map <leader>u :bp<cr>
+map <leader>bq :bd<cr>
+map <leader>b :buffers <cr>:buffer<space>
+
+" Tabs
+map <leader>t :tabnew<cr>
+map <leader>o :tabnext<cr>
+map <leader>y :tabprev<cr>
+map <leader>tq :tabclose<cr>
 
 " Switch windows
 map <leader>h :wincmd h<cr>
@@ -103,29 +117,63 @@ map <leader>l :wincmd l<cr>
 map <leader>j :wincmd j<cr>
 map <leader>k :wincmd k<cr>
 
+" Move windows
+map <leader>H <C-w>H<cr>
+map <leader>L <C-w>L<cr>
+map <leader>J <C-w>J<cr>
+map <leader>K <C-w>K<cr>
+
+" Splits
+" -----------
+" Remove pipes (|) on the border of split windows
+"set fillchars+=vert:\
+
 " Split window
 map <leader>v :vsplit<cr>
 map <leader>s :split<cr>
 
 " Resize window
-map <leader>= :wincmd +<cr>
-map <leader>- :wincmd -<cr>
-map <leader>< :wincmd <<cr>
-map <leader>> :wincmd ><cr>
+map <leader>] 3 :wincmd +<cr>
+map <leader>[ 3 :wincmd -<cr>
+map <leader>, 3 :wincmd <<cr>
+map <leader>. 3 :wincmd ><cr>
+
+" Swap splits
+map <leader>R <C-w>R<cr>
+
+" Equalize split
+map <leader>= <C-w>=<cr>
+
+" Maximize horizontal split.
+map <leader>_ <C-w>_<cr>
+
+" Maximize vertical split.
+map <leader>\| <C-w>\|<cr>
+
+" Close Window
+map <leader>wq <C-w>c<cr>
+
+" Change 2 split windows from vert to horiz and vice-versa
+map <leader>V <C-w>t<C-w>K
+map <leader>S <C-w>t<C-w>H
 
 " NERDTree
+" -----------
 map <C-p> :NERDTreeToggle<cr>
 map <leader>n :NERDTreeFocus<cr>
 
 " Toggle Relative Line Numbers
+" -----------
 map <leader>r :call RelativeNumbersToggle()<cr>
 
 " Save
-map <leader>w : w<cr>
+" -----------
+"map <leader>w : w<cr>
 
 " Quit
-map <leader>q : q<cr>
+"map <leader>q : q<cr>
 
+" -------------------------------------------------------------------------------------------
 " Plugins
 " -------------------------------------------------------------------------------------------
 
