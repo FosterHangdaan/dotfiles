@@ -34,6 +34,7 @@ if [ -x '/usr/bin/vim' ]; then
 	export EDITOR='/usr/bin/vim'
 fi
 
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
@@ -50,10 +51,26 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
-# Rust directories and paths
+# Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 if [ -d "$CARGO_HOME/bin" ]; then
 	PATH="$PATH:$CARGO_HOME/bin"
+fi
+
+# Doom Emacs
+############
+#export EMACSDIR="$XDG_DATA_HOME/emacs"
+# Emacs needs to know the location of the new data directory.
+#export EMACS_USER_DIRECTORY="$EMACSDIR"
+
+#export DOOMLOCALDIR="$XDG_DATA_HOME/emacs/doom"
+export DOOMDIR="$XDG_CONFIG_HOME/doom"
+
+
+# set PATH so it includes Doom Emacs bin if it exists
+if [ -d "$HOME/.emacs.d/bin" ]; then
+  PATH="$HOME/.emacs.d/bin:$PATH"
 fi
