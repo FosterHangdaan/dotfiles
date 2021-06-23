@@ -23,41 +23,11 @@ colors = {  "black":    "1a1a1a",
 }
 
 keys = [
-    # Switch between windows in current stack pane
-    Key([mod], "j", lazy.layout.down(),
-        desc="Move focus down in stack pane"),
-    Key([mod], "k", lazy.layout.up(),
-        desc="Move focus up in stack pane"),
-
-    # Resize windows in current stack
-    Key([mod], "h", lazy.layout.grow(),
-        desc="Grow window"),
-    Key([mod], "l", lazy.layout.shrink(),
-        desc="Shrink window"),
-
-    # Window Properties
-    Key([mod], "n", lazy.layout.normalize(),
-        desc="Normalize window"),
-    Key([mod], "m", lazy.layout.maximize(),
-        desc="Toggle window between minimum and maximum sizes"),
-    Key([mod, "shift"], "f", lazy.window.toggle_floating(),
-        desc="Toggle floating"),
-    Key([mod, "shift"], "m", lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen"),
-
-    # Move windows up or down in current stack
-    Key([mod, "control"], "j", lazy.layout.shuffle_down(),
-        desc="Move window down in current stack "),
-    Key([mod, "control"], "k", lazy.layout.shuffle_up(),
-        desc="Move window up in current stack "),
-
-    # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next(),
-        desc="Switch window focus to other pane(s) of stack"),
-
-    # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
+    #Key(
+    #    [mod, "control"], "Return",
+    #    lazy.spawncmd(),
+    #    desc="Spawn a command using a prompt widget"
+    #),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -67,22 +37,117 @@ keys = [
     #    desc="Toggle between split and unsplit sides of stack"),
 
     # Main Keybindings
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "control"], "Return", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key(["mod1", "control"], "l", lazy.spawn("light-locker-command -l"), desc="Lock the session."),
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
+    Key(
+        [mod], "Return", lazy.spawn(terminal),
+        desc="Launch terminal"
+    ),
+    Key(
+        [mod, "mod1"], "Return",
+        lazy.spawn(
+            "dmenu_run -m 0 -p 'Run: ' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#{0}' -nf '#{1}' -sb '#{2}' -sf '#{3}'".format(colors["black"], colors["white"], colors["orange"], colors["black"])
+        ),
+        desc="Dmenu Launcher"
+    ),
+    Key(
+        [mod], "Tab", lazy.next_layout(),
+        desc="Toggle between layouts"
+    ),
+    Key(
+        [mod], "w", lazy.window.kill(),
+        desc="Kill focused window"
+    ),
+    Key(
+        [mod, "shift"], "l", lazy.spawn("light-locker-command -l"),
+        desc="Lock the session."
+    ),
+    Key(
+        [mod, "shift"], "r", lazy.restart(),
+        desc="Restart qtile"
+    ),
+    Key(
+        [mod, "shift"], "q", lazy.shutdown(),
+        desc="Shutdown qtile"
+    ),
 
-    # Launch Applications (MOD + ALT)
-    Key(["mod1", "shift"], "j", lazy.spawn("joplin"), desc="Launch Joplin"),
-    Key(["mod1", "shift"], "w", lazy.spawn("icecat"), desc="Launch IceCat"),
-    Key(["mod1", "shift"], "k", lazy.spawn("keepassxc"), desc="Launch KeepassXC"),
-    Key(["mod1", "shift"], "m", lazy.spawn("icedove"), desc="Launch IceDove Mail"),
-    Key(["mod1", "shift"], "g", lazy.spawn("gimp"), desc="Launch GIMP"),
-    Key(["mod1", "shift"], "v", lazy.spawn("virt-manager"), desc="Launch Virt-Manager"),
-    Key(["mod1", "shift"], "i", lazy.spawn(terminal + " irssi"), desc="Launch IRSSI"),
+    # Switch between windows in current stack pane
+    Key(
+        [mod], "j", lazy.layout.down(),
+        desc="Move focus down in stack pane"
+    ),
+    Key(
+        [mod], "k", lazy.layout.up(),
+        desc="Move focus up in stack pane"
+    ),
+
+    # Resize windows in current stack
+    Key(
+        [mod], "h", lazy.layout.grow(),
+        desc="Grow window"
+    ),
+    Key(
+        [mod], "l", lazy.layout.shrink(),
+        desc="Shrink window"
+    ),
+
+    # Window Properties
+    Key(
+        [mod], "n", lazy.layout.normalize(),
+        desc="Normalize window"
+    ),
+    Key(
+        [mod], "m", lazy.layout.maximize(),
+        desc="Toggle window between minimum and maximum sizes"
+    ),
+    Key(
+        [mod, "control"], "f", lazy.window.toggle_floating(),
+        desc="Toggle floating"
+    ),
+    Key(
+        [mod, "control"], "m", lazy.window.toggle_fullscreen(),
+        desc="Toggle fullscreen"
+    ),
+
+    # Move windows up or down in current stack
+    Key(
+        [mod, "control"], "j", lazy.layout.shuffle_down(),
+        desc="Move window down in current stack "
+    ),
+    Key(
+        [mod, "control"], "k", lazy.layout.shuffle_up(),
+        desc="Move window up in current stack "
+    ),
+
+
+    # Treetab controls
+    Key(
+        [mod, "control"], "h", lazy.layout.move_left(),
+        desc="Move up a section in treetab"
+    ),
+    Key(
+        [mod, "control"], "l", lazy.layout.move_right(),
+        desc="Move down a seciton in treetab"
+    ),
+
+    # Panes
+    Key(
+        [mod], "space", lazy.layout.next(),
+        desc="Switch window focus to other pane(s) of stack"
+    ),
+
+    # Split Stack
+    Key(
+        [mod, "shift"], "space", lazy.layout.rotate(),
+        desc="Swap panes of split stack"
+    ),
+
+    # Launch Applications (ALT + SHIFT)
+    Key([mod, "mod1"], "j", lazy.spawn("joplin"), desc="Launch Joplin"),
+    Key([mod, "mod1"], "w", lazy.spawn("icecat"), desc="Launch IceCat"),
+    Key([mod, "mod1"], "k", lazy.spawn("keepassxc"), desc="Launch KeepassXC"),
+    Key([mod, "mod1"], "m", lazy.spawn("icedove"), desc="Launch IceDove Mail"),
+    Key([mod, "mod1"], "g", lazy.spawn("gimp"), desc="Launch GIMP"),
+    Key([mod, "mod1"], "v", lazy.spawn("virt-manager"), desc="Launch Virt-Manager"),
+    Key([mod, "mod1"], "i", lazy.spawn(terminal + " irssi"), desc="Launch IRSSI"),
 ]
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
