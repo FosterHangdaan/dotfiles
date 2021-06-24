@@ -38,19 +38,19 @@ style = "bold cyan"
 format = "[$path$read_only ]($style)"
 
 [username]
-style_user = "bg:#f4005f fg:#1a1a1a"
-style_root = "bg:#f4005f fg:white"
+style_user = "bg:red fg:black"
+style_root = "bg:red fg:white"
 format = "[  $user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[@$hostname ](bg:#f4005f fg:#1a1a1a bold)'
+format = '[@$hostname ](bg:red fg:black bold)'
 disabled = false
 
 [git_status]
-style = "fg:#1a1a1a bg:#9d65ff bold"
+style = "fg:black bg:purple bold"
 format = '([| $all_status$ahead_behind]($style))'
 conflicted = "x${count} "
 ahead = "x${count} "
@@ -64,30 +64,30 @@ renamed = "﬍x${count} "
 deleted = "x${count} "
 
 [git_branch]
-style = "fg:#1a1a1a bg:#9d65ff bold"
+style = "fg:black bg:purple bold"
 symbol = " "
 format = '[ $symbol$branch ]($style)'
 truncation_length = 10
 truncation_symbol = "..."
 
 [git_state]
-style = "fg:#1a1a1a bg:#9d65ff bold"
+style = "fg:black bg:purple bold"
 format = '\([| $state($progress_current/$progress_total)]($style)\)'
 
 [python]
-style = "fg:#1a1a1a bg:#e0d561 bold"
+style = "fg:black bg:yellow bold"
 symbol = " "
 format = '[ ${symbol}${pyenv_prefix}${version}(\($virtualenv\)) ]($style)'
 python_binary = "python3"
 scan_for_pyfiles = true
 
 [rust]
-style = "fg:#1a1a1a bg:#e0d561 bold"
+style = "fg:black bg:#ffb86c bold"
 symbol = " "
 format = "[ $symbol$version ]($style)"
 
 [nodejs]
-style = "fg:#1a1a1a bg:#e0d561 bold"
+style = "fg:black bg:blue bold"
 symbol = "⬢ "
 format = "[ $symbol($version) ]($style)"
 not_capable_style = "fg:#f6f6ef bg:#e0d561 bold"

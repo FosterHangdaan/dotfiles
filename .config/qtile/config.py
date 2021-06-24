@@ -6,21 +6,63 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+#from .themes.dracula.py import theme
+theme = {
+    "foreground": "f8f8f2",
+    "background": "282a36",
+    "selection_foreground": "ffffff",
+    "selection_background": "44475a",
+    "url_color": "8be9fd",
+
+    # black
+    "color0":  "21222c",
+    "color8":  "6272a4",
+
+    # red
+    "color1":  "ff5555",
+    "color9":  "ff6e6e",
+
+    # green
+    "color2":  "50fa7b",
+    "color10": "69ff94",
+
+    # yellow
+    "color3":  "f1fa8c",
+    "color11": "ffffa5",
+
+    # blue
+    "color4":  "bd93f9",
+    "color12": "d6acff",
+
+    # magenta
+    "color5":  "ff79c6",
+    "color13": "ff92df",
+
+    # cyan
+    "color6": "8be9fd",
+    "color14": "a4ffff",
+
+    # white
+    "color7": "f8f8f2",
+    "color15": "ffffff",
+
+    # Cursor colors
+    "cursor": "f8f8f2",
+    "cursor_text_color": "282a36",
+
+    # Tab bar colors
+    "active_tab_foreground": "282a36",
+    "active_tab_background": "f8f8f2",
+    "inactive_tab_foreground": "282a36",
+    "inactive_tab_background": "6272a4",
+
+    # Marks
+    "mark1_foreground": "282a36",
+    "mark1_background": "ff5555"
+}
+
 mod = "mod4"
 terminal = "kitty"
-
-# Monokai Color Theme
-colors = {  "black":    "1a1a1a",
-            "white":    "f6f6ef",
-            "dark":     "625e4c",
-            "grey":     "c4c5b5",
-            "red":      "f4005f",
-            "green":    "98e024",
-            "orange":   "fd971f",
-            "yellow":   "e0d561",
-            "purple":   "9d65ff",
-            "blue":     "58d1eb",
-}
 
 keys = [
     #Key(
@@ -44,7 +86,7 @@ keys = [
     Key(
         [mod, "mod1"], "Return",
         lazy.spawn(
-            "dmenu_run -m 0 -p 'Run: ' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#{0}' -nf '#{1}' -sb '#{2}' -sf '#{3}'".format(colors["black"], colors["white"], colors["orange"], colors["black"])
+            "dmenu_run -m 0 -p 'Run: ' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#{0}' -nf '#{1}' -sb '#{2}' -sf '#{3}'".format(theme["color0"], theme["color7"], theme["color3"], theme["color0"])
         ),
         desc="Dmenu Launcher"
     ),
@@ -184,8 +226,8 @@ for i in groups:
 
 my_layout = {   "border_width": 2,
                 "margin": 10,
-                "border_focus": "f4005f",
-                "border_normal": "1D2330"
+                "border_focus": theme["color12"],
+                "border_normal": theme["color8"]
 }
 
 layouts = [
@@ -204,12 +246,12 @@ layouts = [
         fontsize = 12,
         padding_y = 5,
         panel_width = 250,
-        active_bg = colors["red"],
-        active_fg = colors["white"],
-        inactive_bg = colors["dark"],
-        inactive_fg = colors["white"],
-        section_fg = colors["yellow"],
-        bg_color = colors["black"],
+        active_bg = theme["active_tab_background"],
+        active_fg = theme["active_tab_foreground"],
+        inactive_bg = theme["inactive_tab_background"],
+        inactive_fg = theme["inactive_tab_foreground"],
+        section_fg = theme["color3"],
+        bg_color = theme["background"],
     ),
     #layout.VerticalTile(**my_layout),
     #layout.Zoomy(**my_layout),
@@ -217,10 +259,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Ubuntu Bold',
-    fontsize=12,
-    padding=1,
-    background=colors["black"],
+    font = 'Ubuntu Bold',
+    fontsize = 12,
+    padding = 1,
+    background = theme["background"],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -232,7 +274,7 @@ def init_widgets():
             fontsize = 16,
             padding = 5,
             text='',
-            foreground=colors["red"],
+            foreground = theme["color4"],
         ),
         widget.Sep(linewidth=0, padding=10),
         widget.GroupBox(
@@ -240,17 +282,17 @@ def init_widgets():
             padding_x = 3,
             margin_y = 5,
             disable_drag = True,
-            active = colors["green"],
-            inactive = colors["grey"],
+            active = theme["color2"],
+            inactive = theme["color8"],
             highlight_method = "line",
-            highlight_color = colors["dark"],
-            this_current_screen_border = colors["red"],
-            this_screen_border = colors["red"],
-            other_current_screen_border = colors["black"],
-            other_screen_border = colors["black"],
+            highlight_color = theme["selection_background"],
+            this_current_screen_border = theme["color1"],
+            this_screen_border = theme["color1"],
+            other_current_screen_border = theme["color0"],
+            other_screen_border = theme["color0"],
         ),
         widget.Prompt(
-            foreground = colors["orange"],
+            foreground = theme["color3"],
             prompt = 'Run  ',
             padding = 10,
         ),
@@ -258,50 +300,50 @@ def init_widgets():
         widget.WindowName(
             font='FiraCode Nerd Font Bold',
             padding=0,
-            foreground=colors["blue"],
+            foreground = theme["color6"],
             fmt=': {}',
         ),
         # Widgets below are for main monitor only.
         widget.Sep(linewidth=0, padding=10),
         widget.TextBox(
             text = '',
-            foreground = colors["red"],
+            foreground = theme["color4"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["red"],
+            foreground = theme["color0"],
+            background = theme["color4"],
             padding = 6,
             fontsize = 20,
         ),
         widget.CurrentLayout(
-            background = colors["red"],
-            foreground = colors["black"],
+            background = theme["color4"],
+            foreground = theme["color0"],
             padding = 6,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["yellow"],
-            background = colors["red"],
+            foreground = theme["color12"],
+            background = theme["color4"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["yellow"],
+            foreground = theme["color0"],
+            background = theme["color12"],
             padding = 6,
             fontsize = 20,
         ),
         widget.CheckUpdates(
-                foreground = colors["black"],
-                background = colors["yellow"],
-                colour_have_updates = colors["black"],
-                colour_no_updates = colors["black"],
+                foreground = theme["color0"],
+                background = theme["color12"],
+                colour_have_updates = theme["color0"],
+                colour_no_updates = theme["color0"],
                 fmt = '{}',
                 display_format = 'Updates: {updates}',
                 no_update_string = 'No Updates',
@@ -310,88 +352,88 @@ def init_widgets():
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["red"],
-            background = colors["yellow"],
+            foreground = theme["color4"],
+            background = theme["color12"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["red"],
+            foreground = theme["color0"],
+            background = theme["color4"],
             padding = 6,
             fontsize = 20,
         ),
         widget.CPU(
-            foreground = colors["black"],
-            background = colors["red"],
+            foreground = theme["color0"],
+            background = theme["color4"],
             format = '{freq_current}GHz {load_percent}%',
             padding = 6,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["yellow"],
-            background = colors["red"],
+            foreground = theme["color12"],
+            background = theme["color4"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["yellow"],
+            foreground = theme["color0"],
+            background = theme["color12"],
             padding = 6,
             fontsize = 20,
         ),
         widget.Memory(
-                foreground = colors["black"],
-                background = colors["yellow"],
+                foreground = theme["color0"],
+                background = theme["color12"],
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["red"],
-            background = colors["yellow"],
+            foreground = theme["color4"],
+            background = theme["color12"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["red"],
+            foreground = theme["color0"],
+            background = theme["color4"],
             padding = 6,
             fontsize = 20,
         ),
         widget.ThermalSensor(
-            foreground = colors["black"],
-            background = colors["red"],
-            foreground_alert = colors["white"],
+            foreground = theme["color0"],
+            background = theme["color4"],
+            foreground_alert = theme["color7"],
             fmt = 'CPU Temp: {}',
             tag_sensor = "CPUTIN",
             padding = 6,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["yellow"],
-            background = colors["red"],
+            foreground = theme["color12"],
+            background = theme["color4"],
             padding = 0,
             width = 31,
             fontsize = 75,
         ),
         widget.TextBox(
             text = '',
-            foreground = colors["black"],
-            background = colors["yellow"],
+            foreground = theme["color0"],
+            background = theme["color12"],
             padding = 6,
             fontsize = 20,
         ),
         widget.Clock(
-            foreground = colors["black"],
-            background = colors["yellow"],
+            foreground = theme["color0"],
+            background = theme["color12"],
             format = ' %A, %B %d [ %I:%M %p ]',
         ),
-        widget.Sep(linewidth=0, padding=10, background=colors["yellow"]),
+        widget.Sep(linewidth=0, padding=10, background=theme["color12"]),
     ]
 
 screens = [
