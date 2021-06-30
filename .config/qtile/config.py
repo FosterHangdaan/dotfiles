@@ -84,7 +84,7 @@ keys = [
         desc="Launch terminal"
     ),
     Key(
-        [mod, "mod1"], "Return",
+        [mod, "shift"], "Return",
         lazy.spawn(
             "dmenu_run -m 0 -p 'Run: ' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#{0}' -nf '#{1}' -sb '#{2}' -sf '#{3}'".format(theme["color0"], theme["color7"], theme["color3"], theme["color0"])
         ),
@@ -99,15 +99,15 @@ keys = [
         desc="Kill focused window"
     ),
     Key(
-        [mod, "shift"], "l", lazy.spawn("light-locker-command -l"),
+        [mod, "mod1"], "l", lazy.spawn("light-locker-command -l"),
         desc="Lock the session."
     ),
     Key(
-        [mod, "shift"], "r", lazy.restart(),
+        [mod, "mod1"], "r", lazy.restart(),
         desc="Restart qtile"
     ),
     Key(
-        [mod, "shift"], "q", lazy.shutdown(),
+        [mod, "mod1"], "q", lazy.shutdown(),
         desc="Shutdown qtile"
     ),
 
@@ -178,18 +178,19 @@ keys = [
 
     # Split Stack
     Key(
-        [mod, "shift"], "space", lazy.layout.rotate(),
+        [mod, "control"], "space", lazy.layout.rotate(),
         desc="Swap panes of split stack"
     ),
 
     # Launch Applications (ALT + SHIFT)
-    Key([mod, "mod1"], "j", lazy.spawn("joplin"), desc="Launch Joplin"),
-    Key([mod, "mod1"], "w", lazy.spawn("icecat"), desc="Launch IceCat"),
-    Key([mod, "mod1"], "k", lazy.spawn("keepassxc"), desc="Launch KeepassXC"),
-    Key([mod, "mod1"], "m", lazy.spawn("icedove"), desc="Launch IceDove Mail"),
-    Key([mod, "mod1"], "g", lazy.spawn("gimp"), desc="Launch GIMP"),
-    Key([mod, "mod1"], "v", lazy.spawn("virt-manager"), desc="Launch Virt-Manager"),
-    Key([mod, "mod1"], "i", lazy.spawn(terminal + " irssi"), desc="Launch IRSSI"),
+    Key([mod, "shift"], "j", lazy.spawn("joplin"), desc="Launch Joplin"),
+    Key([mod, "shift"], "w", lazy.spawn("icecat"), desc="Launch IceCat"),
+    Key([mod, "shift"], "k", lazy.spawn("keepassxc"), desc="Launch KeepassXC"),
+    Key([mod, "shift"], "m", lazy.spawn("icedove"), desc="Launch IceDove Mail"),
+    Key([mod, "shift"], "g", lazy.spawn("gimp"), desc="Launch GIMP"),
+    Key([mod, "shift"], "e", lazy.spawn("emacs"), desc="Launch Doom Emacs"),
+    Key([mod, "shift"], "v", lazy.spawn("virt-manager"), desc="Launch Virt-Manager"),
+    Key([mod, "shift"], "i", lazy.spawn(terminal + " irssi"), desc="Launch IRSSI"),
 ]
 
 my_groups = [   ('WEB', {'layout': 'monadtall'}),
