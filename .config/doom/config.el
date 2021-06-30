@@ -57,8 +57,8 @@
 ;;(setq display-line-numbers-type t)
 (setq display-line-numbers-type 'visual)
 
-;; Enable text wrap
-(setq-default truncate-lines nil)
+;; Enable text wrap.
+;;(setq-default truncate-lines 'nil)
 
 ;; ****************
 ;; TAB CONFIG
@@ -81,6 +81,7 @@
 (setq-default web-mode-markup-indent-offset custom-tab-width)
 (setq-default web-mode-css-indent-offset custom-tab-width)
 (setq-default web-mode-code-indent-offset custom-tab-width)
+(setq-default js-indent-level custom-tab-width)
 
 ;; ************
 ;; VTERM CONFIG
